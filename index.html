@@ -60,17 +60,13 @@
 
 
 <script>
-    window.onload = function() {
-        var isWebView = /WebView/.test(navigator.userAgent);
-        var whatsappLink = document.getElementById('whatsapp-link');
-
-        if (isWebView) {
-            // Modify the link's behavior for WebView
-            whatsappLink.addEventListener('click', function(event) {
-                event.preventDefault();
-                // Implement alternative logic for WebView
-                alert('Please open WhatsApp manually and contact us at +447514429069');
-            });
-        }
-    };
+    document.addEventListener('click', function(event) {
+  var target = event.target;
+  if (target.tagName === 'A' && target.href.startsWith('smsto:')) {
+    event.preventDefault();
+    var phoneNumber = target.href.replace('smsto:', '');
+    var message = 'Hello from my app!';
+    window.open('intent://send/+' + phoneNumber + '#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end', '_system');
+  }
+});
 </script>
