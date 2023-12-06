@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .icon {
-            display: inline-block;
-            font-size: 24px;
-            margin-right: 10px;
-        }
-        .whatsapp-fast-response {
-            font-size: 16px;
-            color: green;
-        }
-    </style>
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto px-4">
@@ -47,14 +36,16 @@
             </a>
 
             <!-- Card for Email -->
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white p-6">
-                <h2 class="text-xl font-semibold mb-2 flex items-center">
-                    <span class="icon">&#9993;</span> Send an Email
-                </h2>
-                <a href="mailto:contact@shohay.health" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                    Send Email
-                </a>
-            </div>
+            <a href="mailto:contact@shohay.health" target="_blank" class="max-w-sm rounded overflow-hidden shadow-lg bg-white p-6 block no-underline text-black hover:bg-gray-100">
+                <div>
+                    <h2 class="text-xl font-semibold mb-1 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-messenger mr-2" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                        </svg>
+                        Send an Email
+                    </h2>
+                </div>
+            </a>
         </div>
     </div>
 </body>
