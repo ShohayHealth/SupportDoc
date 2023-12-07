@@ -70,19 +70,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get 'user_id' parameter from the URL
     var userId = getUrlParameter('user_id');
 
-    var text = encodeURIComponent("Hello,\n\n *My User ID is:* " + userId + "\n\n *I need help with the following:* \n\n");
+    if(userId){
+        var text = encodeURIComponent("Hello,\n\n *My User ID is:* " + userId + "\n\n *I need help with the following:* \n\n");
 
-    var whatsappLink = document.getElementById('whatsapp_link');
-    whatsappLink.href += "?text=" + text;
+        var whatsappLink = document.getElementById('whatsapp_link');
+        whatsappLink.href += "?text=" + text;
 
-    // Modify Messenger URL
-    var messengerLink = document.getElementById('messenger_link');
-    messengerLink.href += "?text=" + text;
+        // Modify Messenger URL
+        var messengerLink = document.getElementById('messenger_link');
+        messengerLink.href += "?text=" + text;
 
-    // Modify Messenger URL
-    var emailLink = document.getElementById('email_link');
-    var emailSubject = "Your Complaint";
-    emailLink.href += "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(text);
+        // Modify Messenger URL
+        var emailLink = document.getElementById('email_link');
+        var emailSubject = "Your Complaint";
+        emailLink.href += "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(text);
+    }
+    
 });
 </script>
 </body>
