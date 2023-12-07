@@ -9,10 +9,12 @@
 <body class="bg-gray-100">   
     <div class="container mx-auto px-4 py-6">
         <h1 class="text-xl font-medium text-center mb-8 px-4">সহায় প্রেগন্যান্সি অ্যাপ কাস্টমার সার্ভিস</h1>
+        <!-- 
         <div class="bg-purple-100 border-l-4 border-purple-500 text-gray-700 p-4 mb-6" role="alert">
             <p class="font-bold">Important Information</p>
             <p>Our customer service team cannot respond to medical queries. This channel is for app support and general inquiries only. For medical advice, please consult a healthcare professional. We appreciate your understanding.</p>
-        </div>
+        </div> 
+        -->
         <h2 class="text-base font-normal text-center mb-8 mt-8 px-4">আমাদের সাথে যোগাযোগ করতে আপনার সুবিধামত নিচের যে কোন একটি উপায় বেছে নিন</h2>
         <div class="flex flex-wrap justify-center gap-6">
             <!-- Card for WhatsApp Chat -->
@@ -71,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var userId = parseInt(getUrlParameter('user_id'));
 
     if(userId){
-        var text = encodeURIComponent("Hello,\n\n *My User ID is:* " + userId + "\n\n *I need help with the following:* \n\n");
+        var text = encodeURIComponent("হ্যালো সহায় টিম,\n\n আমার প্রেগন্যান্সি অ্যাপ ইউজার আইডি: " + userId + "\n\n নিম্নোক্ত বিষয়ে আমার সাহায্য প্রয়োজন: \n\n");
 
         var whatsappLink = document.getElementById('whatsapp_link');
         whatsappLink.href += "?text=" + text;
