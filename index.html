@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var userId = getUrlParameter('user_id');
 
     if(userId){
-        var text = encodeURIComponent("হ্যালো সহায় টিম,\n\n আমার প্রেগন্যান্সি অ্যাপ ইউজার আইডি: " + userId + "\n\n নিম্নোক্ত বিষয়ে আমার সাহায্য প্রয়োজন: \n\n");
+        var text = encodeURIComponent("হ্যালো সহায় টিম,\n\nআমার প্রেগন্যান্সি অ্যাপ ইউজার আইডি: " + userId + "\n\nনিম্নোক্ত বিষয়ে আমার সাহায্য প্রয়োজন: \n\n");
 
         var whatsappLink = document.getElementById('whatsapp_link');
         whatsappLink.href += "?text=" + text;
