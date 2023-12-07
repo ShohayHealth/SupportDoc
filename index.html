@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Get 'user_id' parameter from the URL
-    var userId = parseInt(getUrlParameter('user_id'));
+    var userId = getUrlParameter('user_id');
 
     if(userId){
         var text = encodeURIComponent("Hello,\n\n *My User ID is:* " + userId + "\n\n *I need help with the following:* \n\n");
