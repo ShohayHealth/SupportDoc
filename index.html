@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(userId){
         var text = encodeURIComponent("হ্যালো সহায় টিম,\n\nআমার প্রেগন্যান্সি অ্যাপ ইউজার আইডি: " + userId + "\n\nনিম্নোক্ত বিষয়ে আমার সাহায্য প্রয়োজন: \n\n");
 
+        // Modify WhatsApp URL
         var whatsappLink = document.getElementById('whatsapp_link');
         whatsappLink.href += "?text=" + text;
 
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var messengerLink = document.getElementById('messenger_link');
         messengerLink.href += "?text=" + text;
 
-        // Modify Messenger URL
+        // Modify Email URL
         var emailLink = document.getElementById('email_link');
         var emailSubject = "সহায় প্রেগন্যান্সি অ্যাপ সংক্রান্ত প্রশ্ন/সাহায্য";
         emailLink.href += "?subject=" + encodeURIComponent(emailSubject) + "&body=" + text;
