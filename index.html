@@ -33,7 +33,7 @@
                 </div>
             </a>
             
-            <!-- Card for Messenger Chat -->
+            <!-- Card for Messenger Chat (turned off October 2026: WhatsApp only)
             <a href="https://m.me/ShohayHealth" class="w-80 rounded-xl overflow-hidden shadow-lg bg-white p-5 block no-underline text-black hover:bg-gray-50" id="messenger_link">
                 <div class="text-center">
                     <h2 class="text-base font-semibold mb-1 flex justify-center items-center">
@@ -44,6 +44,7 @@
                     </h2>
                 </div>
             </a>
+            -->
 
             <!-- Card for Email 
             <a href="mailto:support@shohay.health" class="w-80 rounded-xl overflow-hidden shadow-lg bg-white p-5 block no-underline text-black hover:bg-gray-50" id="email_link">
@@ -79,14 +80,18 @@ document.addEventListener("DOMContentLoaded", function() {
         var whatsappLink = document.getElementById('whatsapp_link');
         whatsappLink.href += "?text=" + text;
 
-        // Modify Messenger URL
+        // Modify Messenger URL (only if its card is turned on)
         var messengerLink = document.getElementById('messenger_link');
-        messengerLink.href += "?text=" + text;
+        if(messengerLink){
+            messengerLink.href += "?text=" + text;
+        }
 
-        // Modify Email URL
+        // Modify Email URL (only if its card is turned on)
         var emailLink = document.getElementById('email_link');
-        var emailSubject = "সহায় প্রেগন্যান্সি অ্যাপ সংক্রান্ত প্রশ্ন/সাহায্য";
-        emailLink.href += "?subject=" + encodeURIComponent(emailSubject) + "&body=" + text;
+        if(emailLink){
+            var emailSubject = "সহায় প্রেগন্যান্সি অ্যাপ সংক্রান্ত প্রশ্ন/সাহায্য";
+            emailLink.href += "?subject=" + encodeURIComponent(emailSubject) + "&body=" + text;
+        }
     }
     
 });
