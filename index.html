@@ -70,7 +70,29 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get 'user_id' parameter from the URL
     var userId = getUrlParameter('user_id');
 
-    if(userId){
+    // A purchase the user asked about from its receipt in the app. The app normally opens
+    // WhatsApp itself with this same message; this page builds it when WhatsApp isn't
+    // installed. Keep the wording in step with PurchaseReceipt.supportMessage in the app.
+    var order = getUrlParameter('order');
+    var purchaseLines = [
+        ['অর্ডার নম্বর', order],
+        ['যা কিনেছি', getUrlParameter('item')],
+        ['টাকা', getUrlParameter('amount')],
+        ['অবস্থা', getUrlParameter('status')],
+        ['তারিখ', getUrlParameter('date')],
+        ['পেমেন্ট মেথড', getUrlParameter('method')],
+        ['ট্রানজেকশন আইডি', getUrlParameter('trx')]
+    ].filter(function(line) { return line[1]; })
+     .map(function(line) { return line[0] + ": " + line[1]; });
+
+    if(order){
+        var purchaseText = encodeURIComponent(
+            "হ্যালো সহায় টিম,\n\nআমার একটি কেনাকাটা নিয়ে সাহায্য দরকার।\n\n" +
+            (userId ? "ইউজার আইডি: " + userId + "\n" : "") +
+            purchaseLines.join("\n") + "\n\nসমস্যা: "
+        );
+        document.getElementById('whatsapp_link').href += "?text=" + purchaseText;
+    } else if(userId){
         var text = encodeURIComponent("হ্যালো সহায় টিম,\n\nআমার প্রেগন্যান্সি অ্যাপ ইউজার আইডি: " + userId + "\n\nনিম্নোক্ত বিষয়ে আমার সাহায্য প্রয়োজন: \n\n");
 
         // Modify WhatsApp URL
